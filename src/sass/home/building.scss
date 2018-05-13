@@ -1,0 +1,439 @@
+@import '../base' ;
+
+body,html{
+  margin:0px;
+  height:100%;
+}
+
+#app{
+  height:100%;
+  > div{
+      height:100%;
+  }
+}
+
+.buildPage{
+  background-color: rgb(235,240,241);
+  height: 100%; 
+  width:100%;
+
+  .pswp__top-bar{
+    display:none !important;
+  }
+
+  .pswp__caption{
+    display:none !important;
+  }
+
+  .buildCarousel{
+    width:100%;
+    height:100%;
+    > div{
+      height:100%;
+      > div{
+        height:100%;
+      }
+    }
+  }
+
+  .buildImage{
+    width:100%;
+    height:100%;
+  }
+
+  .backButton {
+    position: absolute;
+    z-index: 1001;
+    top: rem(2.5);
+    left: rem(2.5);
+    width: rem(52);
+    height: rem(52);
+
+    .goBack{
+      background: url("../../res/images/svg/icon_goback.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      margin-left: rem(11);
+      margin-top: rem(11);
+      background-size: contain !important;
+    }
+  }
+
+  .headerBarEnter{
+    position:fixed;
+    top:0px !important;
+    width:100%;
+    background:rgba(29,30,50,.9);
+    height:rem(67) !important;
+    z-index:10000;
+    animation:headerEnter .6s;
+    -moz-animation:headerEnter .6s; /* Firefox */
+    -webkit-animation:headerEnter .6s; /* Safari and Chrome */
+    -o-animation:headerEnter .6s; /* Opera */
+  }
+
+  .headerBarHide{
+    position:fixed;
+    width:100%;
+    background:rgba(29,30,50,.9);
+    height:rem(67);
+    z-index:10000;
+    animation:headerHide .5s ;
+    -moz-animation:headerHide .5s; /* Firefox */
+    -webkit-animation:headerHide .5s; /* Safari and Chrome */
+    -o-animation:headerHide .5s; /* Opera */
+  }
+
+  .headerBar{
+    top:-67*0.0625 * 1rem;;
+    text-align:center;
+    line-height:rem(67);
+    font-size: rem(15);
+    color:white;
+    .closeBotton{
+      float: right;
+      width:rem(35);
+      height:rem(35);
+      font-size:rem(35);
+      color:white;
+      font-weight:400;
+      transform:rotate(45deg);
+      -ms-transform:rotate(45deg); /* Internet Explorer 9*/
+      -moz-transform:rotate(45deg); /* Firefox */
+      -webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+      -o-transform:rotate(45deg); /* Opera */
+      filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1); 
+    }
+  }
+
+  @keyframes headerEnter
+  {
+  0%   {top:-67*0.0625 * 1rem;}
+  100% {top:0rem;}
+  }
+
+  @keyframes headerHide
+  {
+  0%   {top:0rem;}
+  100% {top:-67*0.0625 * 1rem;}
+  }
+
+  .handleFootEnter{
+    position:fixed;
+    bottom:0px !important;
+    width:100%;
+    background:rgba(29,30,50,.9);
+    height:rem(40) !important;
+    z-index:10000;
+    animation:handleEnter .6s;
+    -moz-animation:handleEnter .6s; /* Firefox */
+    -webkit-animation:handleEnter .6s; /* Safari and Chrome */
+    -o-animation:handleEnter .6s; /* Opera */
+  }
+
+  .handleFootHide{
+    position:fixed;
+    width:100%;
+    background:rgba(29,30,50,.9);
+    height:rem(40);
+    z-index:10000;
+    animation:handleHide .5s ;
+    -moz-animation:handleHide .5s; /* Firefox */
+    -webkit-animation:handleHide .5s; /* Safari and Chrome */
+    -o-animation:handleHide .5s; /* Opera */
+  }
+
+  @keyframes handleEnter
+  {
+  0%   {bottom:-40*.0625 * 1rem;}
+  100% {bottom:0rem;}
+  }
+
+  @keyframes handleHide
+  {
+  0%   {bottom:0rem;}
+  100% {bottom:-40*.0625 * 1rem;}
+  }
+
+  .handleFoot{
+    height:0px;
+    bottom:-40*.0625 * 1rem;
+    width: 100%;
+
+  .progress{
+    height:rem(19) !important;
+    margin-top: rem(10);
+    background-color: #0f122e;
+    border-radius:rem(9.5);
+    margin-left: rem(60);
+    margin-right: rem(60);
+    clear: both;
+    overflow: hidden;
+
+  .progressText{ 
+    height:rem(15);;
+    width: 100%;
+    
+    .progressLeft{
+      background-color:rgb(28,133,254);
+      height:rem(15);
+      margin:rem(2) 0 0 .5%;
+      float:left;
+      border-radius: 7.5rem;
+    }
+
+    .progressLeft1{
+      background-color:rgb(28,133,254);
+      height:rem(15);
+      margin:rem(2) 0 0 .5%;
+      float:left;
+      border-radius: 7.5rem;
+    }
+
+    .progressRight{
+      background-color: rgb(223,228,229);
+      height:rem(15);
+      margin:0 0 0 0rem;
+      border-bottom-right-radius: 7.5rem;
+      border-top-right-radius: 7.5rem;
+      float:left;
+    }
+
+    .progressRight1{
+      background-color: rgb(223,228,229);
+      height:rem(15);
+      margin:0 0 0 0rem;
+      border-radius: 7.5rem;
+      float:left;
+    }
+  }
+}
+
+  .previousBotton{
+    background-color: rgba(255,255,255,0);
+    width:rem(45);
+    height:rem(45);
+    border:none;
+    z-index: 10009;
+    margin-right:-3px;
+    font-size:rem(25);
+    text-align:center;
+    line-height:rem(40);
+    position: absolute;
+    left: 0;
+
+    .fa{
+      display: inline-block;
+      color: #333;
+      width: rem(13);
+      height: rem(21.5);
+    }
+  }
+
+   .nextBotton{
+     background-color: rgba(255,255,255,0);
+     width:rem(45);
+     height:rem(45);
+     border:none;
+     z-index: 10009;
+     margin-left:-3px;
+     font-size:rem(25);
+     text-align:center;
+     line-height:rem(40);
+     position: absolute;
+     right: 0;
+
+     .fa{
+      display: inline-block;
+      color: #333;
+      width: rem(13);
+      height: rem(21.5);
+    }
+    }
+  }
+}
+
+#scaleContainerId{
+  width:100% !important;
+  height:100% !important;
+  overflow:scroll;
+  z-index:2000;
+  position:absolute;
+  top:0px;
+  left:0px;
+  bottom:0px;
+  #scaleImageId{
+    width:100% !important;
+    height:100% !important;
+  }
+}
+
+.compeletBuildModal{
+  .masking{
+    position: absolute;
+    z-index: 10011;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.5;
+    transition: opacity 0.4s;
+  }
+
+  .container{
+    position: absolute;
+    z-index: 10014;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.4s;
+
+    .box{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: rem(250);
+      height: rem(200);
+      border-radius: rem(6);
+      background-image: url("../../res/images/remove-app-bg.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: auto;
+
+      .title{
+        position: absolute;
+        top: rem(20);
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: rem(15);
+        color: #fff;
+        text-align: center;
+      }
+
+      .content{
+        position: absolute;
+        top: 50%;
+        transform:translateY(-50%);
+        left: rem(32);
+        right: rem(82);
+        font-size: rem(12);
+        color: #fff;
+      }
+
+      .cancelButton, .submitButton{
+        position: absolute;
+        bottom: rem(10);
+        width: rem(105);
+        height: rem(30);
+        font-size: rem(12);
+        color: #14b3f2;
+        text-align: center;
+        border: none;
+        outline: none;
+        background: #fff;
+      }
+      .cancelButton{
+        left: rem(19);
+        border-top-left-radius: rem(30);
+        border-bottom-left-radius: rem(30);
+        border-top-right-radius: rem(6);
+        border-bottom-right-radius: rem(6);
+      }
+
+      .submitButton{
+        right: rem(19);
+        border-top-right-radius: rem(30);
+        border-bottom-right-radius: rem(30);
+        border-top-left-radius: rem(6);
+        border-bottom-left-radius: rem(6);
+      }
+    }
+  }
+
+  .modal-enter {
+    .masking {
+      opacity: 0;
+    }
+  
+    .container{
+      transform: translate(0,100%);
+    }
+  }
+
+  .modal-enter.modal-enter-active {
+    .masking {
+      opacity: 0.5;
+      transition: opacity 400ms ease-in;
+    }
+
+    .container{
+      transform: translate(0,0);
+      transition: transform 400ms ease-in;
+    }
+  }
+
+  .modal-leave {
+    .masking {
+      opacity: 0.5;
+    }
+
+    .container{
+      transform: translate(0,0);
+    }
+  }
+
+  .modal-leave.modal-leave-active {
+    .masking {
+      opacity: 0;
+      transition: opacity 400ms ease-in;
+    }
+
+    .container{
+      transform: translate(0,100%);
+      transition: transform 400ms ease-in;
+    }
+  }
+}
+
+.pswp__button{
+ display: none !important;
+}
+
+.pswp__scroll-wrap{
+  width:100%;
+  height:100%;
+}
+
+@media (min-width: 1000px)  {
+  /** 窗口宽度在1000-+00像素的样式 **/
+  .pswp__img{
+    width:100%  !important;height:100%;;
+    position:absolute;
+    left:0%;
+    background-color: white !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  /** 窗口宽度小于1000像素的样式 **/
+  
+  .pswp__img{
+    width:84%  !important;height:100%;
+    position:absolute;
+    left:8%;
+    background-color: white !important;
+  }
+}
+
+.pswp__zoom-wrap{
+  // transform: translate3d(0px, 0px, 0px) scale() ;
+  // background-color: white !important;
+}
+.pswp__item{
+  background-color: white !important;
+}

@@ -1,0 +1,294 @@
+@import './base';
+
+.controlPage{
+  background: #181b35;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  ::-webkit-scrollbar {
+    width: 2px;
+    color:#181b35;
+}
+
+  .maskBlock{
+    position: absolute;
+    top:rem(50);
+    width:100%;
+    bottom:rem(0);
+    background: rgba(255,255,255,0);
+    z-index:1009;
+  }
+  
+  .maskNone{
+    display: none;
+  }
+
+  .containerLinks{
+    width: 70%;
+    position: absolute;
+    z-index: 1001;
+    top: 0.4001rem;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    line-height: 1.6rem;
+    margin: 0 0 0 15% ;
+    text-align: center;
+    height: 1.68042rem;
+
+    .links{
+      position: relative;
+      float: left;
+      overflow: hidden;
+      z-index: 1002;
+      width: 100%;
+      overflow-x: scroll;
+     
+
+     .link{
+       padding: .5rem rem(15.5);
+       color: #265de9;
+       font-size: rem(14);
+       text-decoration: none;
+       width:rem(154);
+       height:rem(40);
+     }
+ 
+     .active{
+       color: #fff;
+     }
+   }
+  }
+
+  .backButton {
+    position: absolute;
+    z-index: 1001;
+    top: rem(2.5);
+    left: rem(2.5);
+    width: rem(52);
+    height: rem(52);
+
+    .goBack{
+      background: url("../res/images/svg/icon_goback.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      margin-left: rem(11);
+      margin-top: rem(11);
+      background-size: contain !important;
+    }
+  }
+
+  .connectionButton{
+    position: absolute;
+    z-index: 1001;
+    top: rem(2.5);
+    right: rem(2.5);
+    width: rem(52);
+    height: rem(52);
+
+    .bleConnect{
+      background: url("../res/images/svg/icon_ble_true.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      background-size: contain !important;
+      margin-top: rem(11);
+      margin-left: rem(11);
+    }
+
+    .bleDisconnect{
+      background: url("../res/images/svg/icon_ble_false.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      background-size: contain !important;
+      margin-top: rem(11);
+      margin-left: rem(11);
+    }
+  }
+
+  .rssiIcon{
+    position: absolute;
+    z-index: 1001;
+    top: rem(2.5);
+    right: rem(54.5);
+    width: rem(52);
+    height: rem(52);
+    .icon{
+      margin-top: rem(11);
+      margin-left: rem(11);
+      height: rem(30);
+      width: rem(30);
+    }
+  }
+
+  .views{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    .list{
+      position: absolute;
+      top: rem(50);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto 0;
+      height: rem(280);
+
+      .swiper-wrapper {
+        top: auto;
+        bottom: auto;
+        margin: auto rem(17);
+        height: initial;
+      }
+    
+      .swiper-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: initial;
+        line-height: 100%;
+        vertical-align: middle;
+        box-sizing: border-box;
+      }
+    
+      .swiper-pagination-bullet {
+        opacity:1;
+        background: #999;
+        border-radius: 0;
+        margin: 0 rem(5);
+        width: rem(10);
+        height: rem(3);
+      }
+      
+      .swiper-pagination-bullet-active {
+        background: #fff;
+      }
+    
+      .swiper-pagination {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: none;
+        transform: none;
+      }
+    }
+
+    .demo{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 50px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .remoteModeView{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: rem(62);
+      bottom: 0;
+    }
+
+    .dodgeModeView{
+      position: absolute;
+      left: 0;
+      top:rem(62);
+      bottom:0;
+      
+    }
+
+    .pathModeView{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      .buttons{
+        position: absolute;
+        top: rem(70);
+        bottom: 0;
+        left: rem(20);
+        margin: auto 0;
+        height: rem(170);
+        width: rem(60);
+
+        .cleanButton{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: rem(60);
+          height: rem(60);
+          line-height: rem(60);
+          border-radius: rem(30);
+          padding: 0;
+          border: none;
+          outline: none;
+          text-align: center;
+          background: #fff;
+      
+          .fa{
+            display: block;
+            color: #333;
+            font-size: rem(30);
+            width: rem(60);
+            height: rem(60);
+            line-height: rem(60);
+          }
+        }
+  
+        .playButton{
+          position: absolute;
+          bottom: rem(15);
+          left: 0;
+          width: rem(60);
+          height: rem(60);
+          line-height: rem(60);
+          border-radius: rem(30);
+          padding: 0;
+          border: none;
+          outline: none;
+          text-align: center;
+          background: #fff;
+      
+          .fa{
+            display: block;
+            color: #333;
+            font-size: rem(30);
+            width: rem(60);
+            height: rem(60);
+            line-height: rem(60);
+          }
+        }
+
+        .disable{
+          background: #999;
+        }
+      }
+
+      .board{
+        position: absolute;
+        top: rem(70);
+        bottom: 0;
+        left: rem(100);
+        right: rem(20);
+        height: rem(260);
+        margin: auto 0;
+        background: #333;
+        border: 5px solid #999;
+
+        .canvas{
+          position: absolute;
+        }
+      }
+    }
+  }
+}

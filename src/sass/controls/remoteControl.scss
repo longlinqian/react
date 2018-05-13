@@ -1,0 +1,631 @@
+@import '../base' ;
+
+body,html{
+  margin:0px;
+  height:100%;
+}
+
+#app{
+  height:100%;
+  > div{
+      height:100%;
+  }
+}
+
+.remoteModeView{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  left: 0;
+  top:rem(0);
+  height: 90%;
+  background: url('../../res/images/control/bgtest.png') no-repeat;
+  background-size:cover;
+  
+  .container{
+    position:absolute;
+    width:100%;
+    height:100%;
+
+  .coverLeft{
+    position:absolute;
+    background: url('../../res/images/control/con_cover.png');
+    background-size:100% 100%;
+    width:rem(341);
+    height:rem(344);
+    top:50%;
+    transform:translateY(-54%);
+  }
+
+  .rockerControl {
+    position: absolute;
+    left: rem(73);
+    top: rem(79);
+    height: rem(200);
+    width: rem(200);
+    border-radius: rem(195);
+    background: url('../../res/images/control/control_cover.png');
+    background-size:100% 100%;
+  }
+
+  .positionButtonClass2{
+    position: absolute;
+    top: rem(56) !important;
+  }
+  
+  .positionButtonClassLeft4{
+    position: absolute;
+    top: rem(12) !important;
+    left:rem(90) !important;
+  }
+  .positionButtonClassRight4{
+    position: absolute;
+    top: rem(12) !important;
+    left:rem(200) !important;
+  }
+
+  .rockerControlDisabled {
+    position: absolute;
+    left: rem(73);
+    top: rem(79);
+    height: rem(200);
+    width: rem(200);
+    border-radius: rem(195);
+    background: url('../../res/images/control/control_cover.png');
+    background-size:100% 100%;
+  }
+
+  .coverRight{
+    position:absolute;
+    width:rem(265);
+    height:rem(277.5);
+    top:50%;
+    right:rem(42);
+    transform:translateY(-50%);
+    & > div{
+      &:nth-child(1) {
+        top: rem(0);
+        left: rem(76);
+      }
+      &:nth-child(2) {
+        top: rem(119);
+        left: rem(0);
+      }
+      &:nth-child(3) {
+        top: rem(119);
+        left: rem(157);
+      }
+    }
+    .whistleButton, .whistleButtonDisabled, .whistleButtonCheck {
+      position: absolute;
+      border-radius: 50%;
+      width: rem(108);
+      height: rem(108);
+      border:none;
+      background-repeat: no-repeat;
+      background-size:100% 100%;
+
+    }
+    .whistleButton {
+      background-image: url('../../res/images/control/power.png');
+    }
+    .whistleButtonDisabled {
+      background-image: url('../../res/images/control/power.png');
+    }
+    .whistleButtonCheck {
+      background-image: url('../../res/images/control/power-active.png');
+    }
+
+    .headlampsButton, .headlampsButtonCheck, .headlampsButtonDisabled{
+      position: absolute;
+      border-radius: 50%;
+      width: rem(108);
+      height: rem(108);
+      border:none;
+      background-repeat: no-repeat;
+      background-size:100% 100%;
+    }
+    .headlampsButton {
+      background-image: url('../../res/images/control/power.png');
+    }
+
+    .headlampsButtonCheck {
+      background-image: url('../../res/images/control/power-active.png');
+    }
+
+    .headlampsButtonDisabled {
+      background-image: url('../../res/images/control/power.png');
+    }
+
+    .remoteButtonImage{
+      width:rem(36);
+      height:rem(35);
+      margin:rem(36.5) 0 0 rem(36);
+      filter: fliph; /*IE*/
+    }
+
+    .remoteButtonImageNotice{
+      width:rem(45);
+      height:rem(45);
+      margin:rem(31.5) 0 0 rem(31.5);
+      filter: fliph; /*IE*/
+    }
+
+    .remoteButtonImageHeadlamps{
+      width:rem(36);
+      height:rem(46);
+      margin:rem(31) 0 0 rem(36.5);
+      filter: fliph; /*IE*/
+    }
+
+    .remoteButtonImageApplause{
+      width:rem(44);
+      height:rem(39);
+      margin:rem(36) 0 0 rem(31);
+      filter: fliph; /*IE*/
+    }
+
+ .noticeButton {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+  }
+
+  .noticeButtonCheck {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power-active.png');
+    background-size:100% 100%;
+  }
+  .noticeButtonDisabled {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+  }
+
+  .applauseButton{
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+  }
+
+  .applauseButtonCheck {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power-active.png');
+    background-size:100% 100%;
+  }
+  .applauseButtonDisabled {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+  }
+
+  .musicButton {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+    top: rem(0);
+    left: rem(76);
+  }
+
+  .musicButtonCheck {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power-active.png');
+    background-size:100% 100%;
+    top: rem(0);
+    left: rem(76);
+  }
+
+  .musicButtonDisabled {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+    top: rem(0);
+    left: rem(76);
+  }
+
+  .smileButton {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+    top: rem(119);
+    left: rem(0); 
+  }
+  
+  .smileButtonCheck {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power-active.png');
+    background-size:100% 100%;
+    top: rem(119);
+    left: rem(0); 
+  }
+
+  .smileButtonDisabled {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+    top: rem(119);
+    left: rem(0); 
+  }
+
+  .personButton{
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+    top: rem(119);
+    left: rem(157);
+  }
+
+  .personButtonCheck {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power-active.png');
+    background-size:100% 100%;
+    top: rem(119);
+    left: rem(157);
+  }
+  .personButtonDisabled {
+    position: absolute;
+    border-radius: 50%;
+    width: rem(108);
+    height: rem(108);
+    border:none;
+    background: url('../../res/images/control/power.png');
+    background-size:100% 100%;
+    top: rem(100);
+    left: rem(157);
+  }
+
+  .faFontSize{
+    font-size:rem(30);
+    margin:rem(25) 0 0 rem(25);
+    color:rgb(52,52,52);
+  }
+  }
+ }
+}
+.bluetoothConnectionModal{
+  .masking{
+    position: absolute;
+    z-index: 1002;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.8;
+    transition: opacity 0.4s;
+  }
+
+  .container{
+    position: absolute;
+    z-index: 10003;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.4s;
+
+    .boxUlt {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: rem(9);
+      bottom: 0;
+      width: rem(250);
+      height: rem(200);
+      border-radius: rem(6);
+      background: url('../../res/images/control/ult.png');
+      background-size: 100% 100%;
+      opacity: 1;
+      margin: auto;
+      z-index: 10003;
+    }
+
+    .boxDian {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: rem(9);
+      bottom: 0;
+      width: rem(250);
+      height: rem(200);
+      border-radius: rem(6);
+      background: url('../../res/images/control/dianji.png');
+      background-size: 100% 100%;
+      opacity: 1;
+      margin: auto;
+      z-index: 10003;
+    }
+
+    .boxJuzhen {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: rem(9);
+      bottom: 0;
+      width: rem(250);
+      height: rem(200);
+      border-radius: rem(6);
+      background: url('../../res/images/control/juzhen.png');
+      background-size: 100% 100%;
+      opacity: 1;
+      margin: auto;
+      z-index: 10003;
+    }
+
+      .title{
+        position: absolute;
+        top: rem(15);
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: rem(12);
+        color: white;
+        text-align: center;
+      }
+
+      .content{
+        position: absolute;
+        top: rem(53);
+        left: rem(20);
+        right: rem(20);
+        width: rem(200);
+        height: rem(1500);
+
+        .contentImage{
+          width:100%;
+          height:100%;
+        }
+      }
+      
+      .submitButton{
+        position: absolute;
+        bottom: rem(10);
+        width: rem(211);
+        right: rem(19.5);
+        left:rem(19.5);
+        margin: 0;
+        height: rem(30);
+        font-size: rem(11.5);
+        text-align: center;
+        border: none;
+        outline: none;
+        color: #14b3f2;
+        background: white;
+        border-radius: rem(15);
+
+      }
+  }
+
+  .modal-enter {
+    .masking {
+      opacity: 0;
+    }
+  
+    .container{
+      transform: translate(0,100%);
+    }
+  }
+
+  .modal-enter.modal-enter-active {
+    .masking {
+      opacity: 0.8;
+      transition: opacity 400ms ease-in;
+    }
+
+    .container{
+      transform: translate(0,0);
+      transition: transform 400ms ease-in;
+    }
+  }
+
+  .modal-leave {
+    .masking {
+      opacity: 0.8;
+    }
+
+    .container{
+      transform: translate(0,0);
+    }
+  }
+
+  .modal-leave.modal-leave-active {
+    .masking {
+      opacity: 0;
+      transition: opacity 400ms ease-in;
+    }
+
+    .container{
+      transform: translate(0,100%);
+      transition: transform 400ms ease-in;
+    }
+  }
+}
+
+
+.ControlLeaveModal{
+  .masking{
+    position: absolute;
+    z-index: 1002;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.8;
+    transition: opacity 0.4s;
+  }
+
+  .container{
+    position: absolute;
+    z-index: 10003;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.4s;
+
+    .box{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: rem(280);
+      height: rem(160);
+      border-radius: rem(6);
+      background: #fff;
+      margin: auto;
+
+      .title{
+        position: absolute;
+        top: rem(15);
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: rem(18);
+        color: #000;
+        text-align: center;
+      }
+
+      .content{
+        position: absolute;
+        top: rem(50);
+        left: rem(20);
+        right: rem(20);
+        font-size:rem(14);
+        color:#222
+      }
+
+      .cancelButton{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: rem(45);
+        font-size: rem(16);
+        text-align: center;
+        border: none;
+        color:#aaa;
+        outline: none;
+        background: transparent;
+       
+      }
+      
+      .submitButton{
+        position: absolute;
+        bottom: 0;
+        width: 50%;
+        right: 0;
+        margin: 0;
+        height: rem(45);
+        font-size: rem(16);
+        text-align: center;
+        border: none;
+        outline: none;
+        color: #1c74d9;
+        background: transparent;
+        border-top: 1px solid #bbb;
+      }
+    }
+  }
+
+  .modal-enter {
+    .masking {
+      opacity: 0;
+    }
+  
+    .container{
+      transform: translate(0,100%);
+    }
+  }
+
+  .modal-enter.modal-enter-active {
+    .masking {
+      opacity: 0.8;
+      transition: opacity 400ms ease-in;
+    }
+
+    .container{
+      transform: translate(0,0);
+      transition: transform 400ms ease-in;
+    }
+  }
+
+  .modal-leave {
+    .masking {
+      opacity: 0.8;
+    }
+
+    .container{
+      transform: translate(0,0);
+    }
+  }
+
+  .modal-leave.modal-leave-active {
+    .masking {
+      opacity: 0;
+      transition: opacity 400ms ease-in;
+    }
+
+    .container{
+      transform: translate(0,100%);
+      transition: transform 400ms ease-in;
+    }
+  }
+}

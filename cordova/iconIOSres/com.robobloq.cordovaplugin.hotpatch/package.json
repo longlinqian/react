@@ -1,0 +1,26 @@
+{
+  "name": "com.robobloq.cordovaplugin.hotpatch",
+  "version": "1.0.1",
+  "cordova": {
+    "id": "ionic-plugin-hotpatch",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "hotpatch",
+  "repository": "",
+  "issue": "",
+  "keywords": [
+    "cordova",
+    "keyboard",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-blackberry10",
+    "cordova-wp8",
+    "cordova-windows"
+  ],
+  "author": "linlong",
+  "license": "Apache 2.0"
+}

@@ -1,0 +1,33 @@
+
+
+.tsPageConnectionMore{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+
+  *{ font-size: 12px;}
+
+  .ts_bt1{ width:70px;height: 28px; clear: both; margin:4px 2px;background:#6495ED;}
+  .ts_input{ border: solid 1px #2a2a2a; width: 150px; }
+  .ts_input1{ border: solid 1px #2a2a2a; width: 50px; }
+  .tsLogList{
+    height: 70px;overflow: scroll; width: 95%; clear: both; border: 1px #c1111a solid; font-size: 12px;
+  }
+
+  .devicelist{
+    height:90px;clear: both;width: 99%;
+  }
+  .leftList{
+    height:90px;overflow: scroll; border: 1px #c1bc32 solid;width:49%;float: left;
+  }
+  .rightList{
+    height:90px;overflow: scroll; border: 1px #22c123 solid;width:49%;float: left;
+  }
+
+  .tsDevItem{
+    margin:2px;line-height:26px;font-size:12px;width:100%;clear: both;background-color: #00cd87;overflow: hidden;
+  }
+.testHeader{ line-height: 120%; min-height:20px;}
+
+}

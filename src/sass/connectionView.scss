@@ -1,0 +1,551 @@
+@import './base';
+
+$roundRadius: rem(120);
+$scanPanelWidth: rem(300);
+$connectionHeight: rem(800);
+
+.connectionView {
+  .connectMasking {
+    position: absolute;
+    z-index: 1990;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.8;
+  }
+
+  .content {
+    background-color: #181C33;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 2000;
+    overflow: hidden;
+
+    .waiting {
+      .round {
+        width: $roundRadius;
+        height: $roundRadius;
+        background-color: #2E6DB7;
+        border-radius: $roundRadius * 0.5;
+        animation-name: roundFrames;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-out;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: - ($roundRadius * 0.5);
+        margin-top: - ($roundRadius * 0.5);
+      }
+      @keyframes roundFrames {
+        0% {
+          transform: scale(0.2);
+          opacity: 100;
+        }
+        100% {
+          transform: scale(6);
+          opacity: 0;
+        }
+      }
+
+      .device {
+        width: rem(200);
+        height: rem(100);
+        position: absolute;
+        left: 50%;
+        bottom: - rem(50);
+        z-index: 2300;
+        margin-left: - rem(100);
+        background: url("../res/images/phone.png") no-repeat;
+        background-size: contain;
+        border-radius: rem(8);
+        animation-name: deviceFrames;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      @keyframes deviceFrames {
+        0% {
+          bottom: - rem(50);
+        }
+        100% {
+          bottom: rem(55);
+        }
+      }
+    }
+
+    .connecting {
+      .info {
+        left: 10%;
+        top: 50%;
+        position: absolute;
+        z-index: 2200;
+        right: 10%;
+        text-align: center;
+        margin-top: rem(120);
+        font-size: rem(16);
+        color: #ffffff;
+      }
+    }
+
+    .connected {
+      .info {
+        left: 10%;
+        top: 50%;
+        position: absolute;
+        z-index: 2200;
+        right: 10%;
+        text-align: center;
+        margin-top: rem(60);
+        font-size: rem(16);
+        color: #ffffff;
+      }
+
+      .disconnectButton {
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        z-index: 2200;
+        width: rem(160);
+        height: rem(40);
+        margin-top: rem(100);
+        margin-left: - rem(80);
+        border-radius: 4px;
+        border: 1px solid #bbb;
+        color: #000000;
+        background: #ffffff;
+        text-align: center;
+        line-height: rem(40);
+        font-size: rem(16);
+      }
+    }
+
+    .robot {
+      width: rem(150);
+      height: rem(158);
+      left: 50%;
+      top: 50%;
+      position: absolute;
+      z-index: 2202;
+      margin-left: - rem(75);
+      margin-top: - rem(79.5);
+      background-size: contain;
+      .bluetooth{
+        position: absolute;
+        background-size: contain !important;
+      }
+      &.bleNotEnabled, &.connecting {
+        .robotIcon {
+          opacity: 0.2;
+        }
+      }
+      &.bleNotEnabled{
+        .bluetooth{
+          top: rem(61);
+          left: rem(24.5);
+          width: rem(101.5);
+          height: rem(36);
+          background: url("../res/images/svg/bluetooth_disabled.svg") no-repeat;
+        }
+      }
+      &.connecting{
+        .bluetooth{
+          top: rem(45);
+          left: rem(26);
+          width: rem(98);
+          height: rem(66.5);
+          background: url("../res/images/svg/bluetooth_connect.svg") no-repeat;
+        }
+      }
+    }
+
+    .robotIcon{
+      width: rem(150);
+      height: rem(158);
+      background: url('../res/images/connection_robot.png') no-repeat;
+      background-size: contain !important;
+    }
+
+
+
+    .closeButton, .searchButton {
+      width: rem(52);
+      height: rem(52);
+      position: absolute;
+      z-index: 2300;
+      top: rem(8);
+      & > div {
+        margin-top: rem(-15);
+        margin-left: rem(-15);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: rem(30);
+        height: rem(30);
+        background-size: contain !important;
+      }
+    }
+
+    .closeButton {
+      right: rem(8);
+      .close{
+        background: url("../res/images/svg/icon_close.svg") no-repeat;
+      }
+    }
+
+    .searchButton {
+      right: rem(60);
+      .search{
+        background: url("../res/images/svg/search.svg") no-repeat;
+      }
+    }
+  }
+
+  .content-enter {
+    .content {
+      top: $connectionHeight;
+    }
+  }
+
+  .content-enter.content-enter-active {
+    .content {
+      top: rem(0);
+      transition: top 400ms ease-in;
+    }
+  }
+
+  .content-leave {
+    .content {
+      bottom: rem(0);
+    }
+  }
+
+  .content-leave.content-leave-active {
+    .content {
+      top: $connectionHeight;
+      transition: top 400ms ease-in;
+    }
+  }
+
+  .scanPanel {
+    .masking {
+      position: absolute;
+      z-index: 3002;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #000;
+      opacity: 0.8;
+    }
+
+    .panel {
+      position: absolute;
+      z-index: 3002;
+      top: 0;
+      bottom: 0;
+      width: $scanPanelWidth;
+      background: #282B3C;
+      right: 0;
+
+      .header {
+        .title {
+          position: absolute;
+          z-index: 3002;
+          top: rem(15);
+          left: 0;
+          right: 0;
+          text-align: center;
+          font-size: rem(16);
+          color: #fff;
+        }
+
+        .scanRefreshButton, .scanCloseButton {
+          position: absolute;
+          z-index: 3003;
+          top: 0;
+          width: rem(52);
+          height: rem(52);
+          & > div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-repeat: no-repeat;
+            background-size: contain !important;
+          }
+        }
+
+        .scanRefreshButton {
+          left: rem(4);
+          .scanRefresh{
+            margin-top: rem(-11.5);
+            margin-left: rem(-11.5);
+            width: rem(21);
+            height: rem(21);
+            background-image: url("../res/images/svg/refresh.svg");
+          }
+
+        }
+
+        .scanCloseButton {
+          right: rem(4);
+          .scanClose{
+            margin-top: rem(-15);
+            margin-left: rem(-15);
+            width: rem(30);
+            height: rem(30);
+            background-image: url("../res/images/svg/icon_close.svg");
+          }
+        }
+      }
+
+      .bleList {
+        top: rem(58);
+        bottom: rem(20);
+        left: rem(22);
+        right: rem(22);
+        clear: both;
+        overflow-y: scroll;
+        position: absolute;
+        z-index: 2001;
+
+        .item {
+          border-bottom: 1px #bbbbbb solid;
+          line-height: rem(50);
+          height: rem(50);
+          clear: both;
+
+          .name {
+            width: 87%;
+            overflow: hidden;
+            float: left;
+            text-align: left;
+            font-size: rem(18);
+            color: #ffffff;
+          }
+
+          .rssi {
+            width: 12%;
+            overflow: hidden;
+            float: right;
+            text-align: left;
+            padding-top: rem(13);
+
+            .icon {
+              height: rem(20);
+              width: rem(20);
+              background: url("../res/images/svg/signal.svg") no-repeat;
+              background-size: 100% 100%;
+            }
+          }
+        }
+      }
+
+      .loading {
+        margin-top: rem(100);
+        text-align: center;
+        .fa {
+          display: inline-block;
+          color: #fff;
+        }
+      }
+    }
+
+    .panel-enter {
+      .masking {
+        opacity: 0;
+      }
+
+      .panel {
+        right: - $scanPanelWidth;
+      }
+    }
+
+    .panel-enter.panel-enter-active {
+      .masking {
+        opacity: 0.8;
+        transition: opacity 400ms ease-in;
+      }
+
+      .panel {
+        right: rem(0);
+        transition: right 400ms ease-in;
+      }
+    }
+
+    .panel-leave {
+      .masking {
+        opacity: 0.8;
+      }
+
+      .panel {
+        right: rem(0);
+      }
+    }
+
+    .panel-leave.panel-leave-active {
+      .masking {
+        opacity: 0;
+        transition: opacity 400ms ease-in;
+      }
+
+      .panel {
+        right: - $scanPanelWidth;
+        transition: right 400ms ease-in;
+      }
+    }
+  }
+
+  .connectionDialog {
+    .masking {
+      position: absolute;
+      z-index: 4002;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #000;
+      opacity: 0.8;
+      transition: opacity 0.4s;
+    }
+
+    .container {
+      position: absolute;
+      z-index: 4003;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      transition: transform 0.4s;
+
+      .box {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: rem(250);
+        height: rem(200);
+        border-radius: rem(6);
+        background-image: url("../res/images/remove-app-bg.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: auto;
+
+        .title{
+          position: absolute;
+          top: rem(20);
+          left: 0;
+          right: 0;
+          margin: auto;
+          font-size: rem(15);
+          color: #fff;
+          text-align: center;
+        }
+
+        .content1{
+          position: absolute;
+          top: 50%;
+          transform:translateY(-50%);
+          left: rem(32);
+          right: rem(82);
+          font-size: rem(12);
+          color: #fff;
+        }
+
+        .cancelButton, .submitButton{
+          position: absolute;
+          bottom: rem(10);
+          width: rem(105);
+          height: rem(30);
+          line-height:rem(30);
+          font-size: rem(12);
+          color: #14b3f2;
+          text-align: center;
+          border: none;
+          outline: none;
+          background: #fff;
+        }
+        .cancelButton{
+          left: rem(19);
+          border-top-left-radius: rem(30);
+          border-bottom-left-radius: rem(30);
+          border-top-right-radius: rem(6);
+          border-bottom-right-radius: rem(6);
+        }
+
+        .submitButton{
+          right: rem(19);
+          border-top-right-radius: rem(30);
+          border-bottom-right-radius: rem(30);
+          border-top-left-radius: rem(6);
+          border-bottom-left-radius: rem(6);
+        }
+
+        .submitButton2{
+          position: absolute;
+          bottom: rem(10);
+          width: rem(210);
+          left:rem(20);
+          height: rem(30);
+          line-height:rem(30);
+          font-size: rem(12);
+          color: #14b3f2;
+          text-align: center;
+          border: none;
+          outline: none;
+          background: #fff;
+          border-radius: rem(15);
+        }
+      }
+    }
+
+    .modal-enter {
+      .masking {
+        opacity: 0;
+      }
+
+      .container {
+        transform: translate(0, 100%);
+      }
+    }
+
+    .modal-enter.modal-enter-active {
+      .masking {
+        opacity: 0.8;
+        transition: opacity 400ms ease-in;
+      }
+
+      .container {
+        transform: translate(0, 0);
+        transition: transform 400ms ease-in;
+      }
+    }
+
+    .modal-leave {
+      .masking {
+        opacity: 0.8;
+      }
+
+      .container {
+        transform: translate(0, 0);
+      }
+    }
+
+    .modal-leave.modal-leave-active {
+      .masking {
+        opacity: 0;
+        transition: opacity 400ms ease-in;
+      }
+
+      .container {
+        transform: translate(0, 100%);
+        transition: transform 400ms ease-in;
+      }
+    }
+  }
+}

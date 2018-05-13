@@ -1,0 +1,890 @@
+@import './base';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+*{
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+input,textarea {
+  -webkit-touch-callout:default;
+  -webkit-user-select:auto;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+.text-ellipsis{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis1{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 1.2rem 0 .7rem;
+}
+
+#app {
+  height: 100%;
+}
+
+#app {
+  .rssiIntensity0 {
+    background: url('../res/images/control/digi-0.svg') no-repeat;
+    background-size: contain;
+  }
+
+  .rssiIntensity1 {
+    background: url('../res/images/control/digi-1.svg') no-repeat;
+    background-size: contain;
+  }
+
+  .rssiIntensity2 {
+    background: url('../res/images/control/digi-2.svg') no-repeat;
+    background-size: contain;
+  }
+
+  .rssiIntensity3 {
+    background: url('../res/images/control/digi-3.svg') no-repeat;
+    background-size: contain;
+  }
+
+  .rssiIntensity4 {
+    background: url('../res/images/control/digi-4.svg') no-repeat;
+    background-size: contain;
+  }
+}
+.firmwareModal, .aboutUsModal, .lowBatterDialog, .closeControlModal, .checkUpdateModal .languageMode {
+  .masking{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    opacity: 0.5;
+    transition: opacity 0.4s;
+  }
+
+  .modal-enter {
+    .masking {
+      opacity: 0;
+    }
+
+    .container{
+      transform: translate(0,100%);
+    }
+  }
+
+  .modal-enter.modal-enter-active {
+    .masking {
+      opacity: 0.5;
+      transition: opacity 400ms ease-in;
+    }
+
+    .container{
+      transform: translate(0,0);
+      transition: transform 400ms ease-in;
+    }
+  }
+
+  .modal-leave {
+    .masking {
+      opacity: 0.5;
+    }
+
+    .container{
+      transform: translate(0,0);
+    }
+  }
+
+  .modal-leave.modal-leave-active {
+    .masking {
+      opacity: 0;
+      transition: opacity 400ms ease-in;
+    }
+
+    .container{
+      transform: translate(0,100%);
+      transition: transform 400ms ease-in;
+    }
+  }
+}
+.firmwareModal{
+  .masking{
+    z-index: 1002;
+  }
+  .container{
+    position: absolute;
+    z-index: 10003;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.4s;
+
+    .box {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: rem(9);
+      bottom: 0;
+      width: rem(250);
+      height: rem(150);
+      border-radius: rem(6);
+      background-color: #14b3f2;
+      background-size: 100% 100%;
+      opacity: 1;
+      margin: auto;
+      z-index: 10003;
+    }
+    .closeButton{
+      position: absolute;
+      top: rem(-10);
+      right: rem(-10);
+      width: rem(30);
+      height: rem(30);
+      background-color: #14b3f2;
+      box-shadow: 0 0 10.9px 2.1px rgba(6, 7, 15, 0.42);
+      border-radius: rem(30);
+      .close{
+        position: absolute;
+        margin-top: rem(-6.25);
+        margin-left: rem(-6.25);
+        top: 50%;
+        left: 50%;
+        width: rem(13.5);
+        height: rem(13.5);
+        background-image: url(../res/images/svg/close.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    .title{
+      position: absolute;
+      top: 50%;
+      transform:translateY(-50%) ;
+      left: rem(75.5);
+      margin: auto;
+      font-size: rem(23);
+      line-height:rem(26.25);
+      color: white;
+      text-align: center;
+      width:rem(93);
+      min-height:rem(26.25);
+    }
+
+    .title1{
+      position: absolute;
+      top: 50%;
+      transform:translateY(rem(-31.25)) ;
+      left: rem(55);
+      margin: auto;
+      font-size: rem(23);
+      line-height:rem(26.25);
+      color: white;
+      text-align: center;
+      width:rem(142);
+      min-height:rem(26.25);
+    }
+
+    .title2{
+      position: absolute;
+      top: 50%;
+      transform:translateY(rem(-31.25)) ;
+      left: rem(75.5);
+      margin: auto;
+      font-size: rem(23);
+      line-height:rem(26.25);
+      color: white;
+      text-align: center;
+      width:rem(94);
+      min-height:rem(26.25);
+    }
+
+    .title3{
+      position: absolute;
+      top: 50%;
+      transform:translateY(-50%) ;
+      left: rem(70.5);
+      margin: auto;
+      font-size: rem(23);
+      line-height:rem(26.25);
+      color: white;
+      text-align: center;
+      width:rem(104);
+      min-height:rem(26.25);
+    }
+
+    .progressBg{
+      position:absolute;
+      top:rem(101.5);
+      left:rem(35);
+      width:rem(180);
+      height:rem(11);
+      background-color: #0596da;
+      border-radius: rem(5.5);
+      border:none;
+      .progressText{
+        position:absolute;
+        top:rem(2);
+        left:rem(2);
+        width:rem(105);
+        height:rem(7);
+        border-radius:rem(3.5);
+        background-color: white;
+        border:none;
+      }
+    }
+    .content{
+      position: absolute;
+      top: rem(53);
+      left: rem(20);
+      right: rem(20);
+      width: rem(200);
+      height: rem(150);
+
+      .contentImage{
+        width:100%;
+        height:100%;
+      }
+    }
+
+    .submitLeftButton{
+      position: absolute;
+      bottom: rem(10);
+      width: rem(102);
+      left:rem(19.5);
+      margin: 0;
+      height: rem(30);
+      font-size: rem(11.5);
+      text-align: center;
+      border: none;
+      outline: none;
+      color: #14b3f2;
+      background: white;
+      border-top-left-radius: rem(15);
+      border-bottom-left-radius: rem(15);
+
+    }
+
+    .submitRightButton{
+      position: absolute;
+      bottom: rem(10);
+      width: rem(103);
+      right: rem(19.5);
+      margin: 0;
+      height: rem(30);
+      font-size: rem(11.5);
+      text-align: center;
+      border: none;
+      outline: none;
+      color: #14b3f2;
+      background: white;
+      border-top-right-radius: rem(15);
+      border-bottom-right-radius: rem(15);
+
+    }
+
+    // 显示固件信息
+    .info, .current, .version{
+      text-align: center;
+      color: #fff;
+    }
+    .info{
+      font-size: rem(15);
+      padding-top: rem(20);
+    }
+    .current{
+      font-size: rem(12);
+      padding-top: rem(30);
+      color: #ccc;
+    }
+    .version{
+      font-size: rem(12);
+    }
+  }
+}
+.aboutUsModal{
+  .masking{
+    z-index: 1002;
+  }
+  .container{
+    position: absolute;
+    z-index: 10003;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.4s;
+
+    .box {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: rem(9);
+      bottom: 0;
+      width: rem(250);
+      height: rem(150);
+      border-radius: rem(6);
+      background-color: #14b3f2;
+      background-size: 100% 100%;
+      opacity: 1;
+      margin: auto;
+      z-index: 10003;
+    }
+    .closeButton{
+      position: absolute;
+      top: rem(-10);
+      right: rem(-10);
+      width: rem(30);
+      height: rem(30);
+      background-color: #14b3f2;
+      box-shadow: 0 0 10.9px 2.1px rgba(6, 7, 15, 0.42);
+      border-radius: rem(30);
+      .close{
+        position: absolute;
+        margin-top: rem(-6.25);
+        margin-left: rem(-6.25);
+        top: 50%;
+        left: 50%;
+        width: rem(13.5);
+        height: rem(13.5);
+        background-image: url(../res/images/svg/close.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  .logo{
+    width: rem(99);
+    height: rem(43.5);
+    position: absolute;
+    top: rem(30.5);
+    left: rem(75.5);
+    background-image: url("../res/images/svg/aboutus-logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .copyright, .website, .email{
+    position: absolute;
+    font-size: rem(7);
+    color: #fff;
+  }
+  .copyright{
+    left: rem(20.5);
+    bottom: rem(37.5);
+  }
+  .website{
+    left: rem(20.5);
+    bottom: rem(21.5);
+    color:#ddd;
+  }
+  .email{
+    left: rem(20.5);
+    bottom: rem(6.5);
+  }
+}
+
+.languageMode{
+  a,a:hover{color:#FFF;text-decoration:none;font-size:rem(16)}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.nav {
+  font-size:rem(16);
+  position:absolute;
+  top:rem(40);
+  left:rem(70);
+  width: rem(100);
+  margin: 0 auto;
+  background: #14b3f2;
+  color: white;
+  z-index:10005;
+  border:1px solid #ddd;
+  border-radius:rem(3);
+}
+.nav a {
+  display: block;
+  padding: 0 16px;
+  line-height: inherit;
+  cursor: pointer;
+  width:rem(100);
+  text-align: center;
+}
+.nav_menu {
+  line-height: rem(25);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.nav_menu-item {
+  display: inline-block;
+  position: relative;
+  color:white;
+  text-align:center;
+}
+.nav_menu-item:hover {
+  background-color: #ddd;
+}
+.nav_menu-item:hover .nav_submenu {
+  display: block;
+}
+.nav_submenu {
+  font-weight: 300;
+  text-transform: none;
+  display: none;
+  position: absolute;
+  width: rem(100);
+  background-color: #14b3f2;
+}
+.nav_submenu-item {
+  border:1px solid white;
+  // border-radius:rem(5);
+}
+
+.nav_submenu-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+  .masking{
+    z-index: 1002;
+  }
+  .container{
+    position: absolute;
+    z-index: 10003;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.4s;
+
+    .box {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: rem(9);
+      bottom: 0;
+      width: rem(250);
+      height: rem(150);
+      border-radius: rem(6);
+      background-color: #14b3f2;
+      background-size: 100% 100%;
+      opacity: 1;
+      margin: auto;
+      z-index: 10003;
+    }
+    .closeButton{
+      position: absolute;
+      top: rem(-10);
+      right: rem(-10);
+      width: rem(30);
+      height: rem(30);
+      background-color: #14b3f2;
+      box-shadow: 0 0 10.9px 2.1px rgba(6, 7, 15, 0.42);
+      border-radius: rem(30);
+      z-index: 10004;
+      .close{
+        position: absolute;
+        margin-top: rem(-6.25);
+        margin-left: rem(-6.25);
+        top: 50%;
+        left: 50%;
+        width: rem(13.5);
+        height: rem(13.5);
+        background-image: url(../res/images/svg/close.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  .title{
+    width: rem(99);
+    height: rem(43.5);
+    position: absolute;
+    top: rem(39.5);
+    left: rem(75.5);
+  }
+
+  .settingLanguage{
+    width:100%;
+    height:rem(40);
+    line-height:rem(40);
+    position:absolute;
+    top:rem(0);
+    text-align:center;
+    font-size:rem(16);
+    color:white;
+    z-index: 10003;
+  }
+
+  .selectBox{
+    width: rem(99);
+    height: rem(43.5);
+    position: absolute;
+    top: rem(39.5);
+    left: rem(75.5);
+    font-size:rem(30);
+    color:white;
+    .sele{
+      font-size:rem(16);
+      color: white;
+      border: 1px solid white;
+      background: #14b3f2;
+    }
+  }
+
+  .buttonBox{
+    border-top:1px solid white;
+    width:100%;
+    height:rem(40);
+    line-height:rem(40);
+    position:absolute;
+    bottom:rem(0);
+    // padding: 0 1rem 0 0; 
+    text-align:center;
+    color:white;
+
+    .buttonBoxText{
+      font-size:rem(20);
+      color:white;
+    }
+  }
+  .copyright, .website, .email{
+    position: absolute;
+    font-size: rem(7);
+    color: #fff;
+  }
+  .copyright{
+    left: rem(20.5);
+    bottom: rem(27.5);
+  }
+  .website{
+    left: rem(20.5);
+    bottom: rem(16.5);
+  }
+  .email{
+    left: rem(119.5);
+    bottom: rem(16.5);
+  }
+}
+
+.lowBatterDialog {
+  .masking{
+    z-index: 14002;
+  }
+  .container {
+    position: absolute;
+    z-index: 14003;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.4s;
+
+    .box {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: rem(280);
+      height: rem(160);
+      border-radius: rem(6);
+      background: #fff;
+      margin: auto;
+
+      .info {
+        font-size: rem(14);
+        color: #000;
+        clear: both;
+        padding: rem(4);
+        margin-top: rem(40);
+        text-align: center;
+      }
+
+      .submitButton {
+        line-height: rem(45);
+        height: rem(45);
+        font-size: rem(16);
+        text-align: center;
+        border: none;
+        outline: none;
+        background: transparent;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #bbb;
+      }
+    }
+  }
+}
+.closeControlModal{
+  .masking{
+    z-index: 10011;
+  }
+  .container{
+    position: absolute;
+    z-index: 10014;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.4s;
+
+    .box{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: rem(250);
+      height: rem(200);
+      border-radius: rem(6);
+      background-image: url("../res/images/remove-app-bg.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: auto;
+
+      .title{
+        position: absolute;
+        top: rem(20);
+        left: 0;
+        right: 0;
+        margin: auto;
+        font-size: rem(15);
+        color: #fff;
+        text-align: center;
+      }
+
+      .content{
+        position: absolute;
+        top: 50%;
+        transform:translateY(-50%);
+        left: rem(32);
+        right: rem(82);
+        font-size: rem(12);
+        color: #fff;
+      }
+
+      .cancelButton, .submitButton{
+        position: absolute;
+        bottom: rem(10);
+        width: rem(105);
+        height: rem(30);
+        font-size: rem(12);
+        color: #14b3f2;
+        text-align: center;
+        border: none;
+        outline: none;
+        background: #fff;
+      }
+      .cancelButton{
+        left: rem(19);
+        border-top-left-radius: rem(30);
+        border-bottom-left-radius: rem(30);
+        border-top-right-radius: rem(6);
+        border-bottom-right-radius: rem(6);
+      }
+
+      .submitButton{
+        right: rem(19);
+        border-top-right-radius: rem(30);
+        border-bottom-right-radius: rem(30);
+        border-top-left-radius: rem(6);
+        border-bottom-left-radius: rem(6);
+      }
+    }
+  }
+}
+
+.checkUpdateModal{
+  .masking{
+    z-index: 1002;
+  }
+  .container{
+    position: absolute;
+    z-index: 10003;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 0.4s;
+
+    .box {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: rem(9);
+      bottom: 0;
+      width: rem(250);
+      height: rem(150);
+      border-radius: rem(6);
+      background-color: #14b3f2;
+      background-size: 100% 100%;
+      opacity: 1;
+      margin: auto;
+      z-index: 10003;
+    }
+    .closeButton{
+      position: absolute;
+      top: rem(-10);
+      right: rem(-10);
+      width: rem(30);
+      height: rem(30);
+      background-color: #14b3f2;
+      box-shadow: 0 0 10.9px 2.1px rgba(6, 7, 15, 0.42);
+      border-radius: rem(30);
+      .close{
+        position: absolute;
+        margin-top: rem(-6.25);
+        margin-left: rem(-6.25);
+        top: 50%;
+        left: 50%;
+        width: rem(13.5);
+        height: rem(13.5);
+        background-image: url(../res/images/svg/close.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  .logo{
+    width: rem(99);
+    height: rem(43.5);
+    position: absolute;
+    top: rem(39.5);
+    left: rem(75.5);
+    background-image: url("../res/images/svg/aboutus-logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .copyright, .website, .email{
+    position: absolute;
+    font-size: rem(7);
+    color: #fff;
+  }
+  .copyright{
+    left: rem(20.5);
+    bottom: rem(27.5);
+  }
+  .website{
+    left: rem(20.5);
+    bottom: rem(16.5);
+  }
+  .email{
+    left: rem(119.5);
+    bottom: rem(16.5);
+  }
+
+  .curVersionText{
+    color:white;
+    text-align: center;
+    width:100%;
+    font-size:rem(16);
+    margin-top:rem(20);
+  }
+  .curVersionText1{
+    color:white;
+    text-align: center;
+    width:100%;
+    font-size:rem(16);
+    margin-top:rem(40);
+  }
+
+  .lastVersionText{
+    color:white;    
+    text-align: center;
+    width:100%;
+    font-size:rem(16);
+    margin-top:rem(20);
+  }
+
+  .cancelButton, .submitButton{
+    position: absolute;
+    bottom: rem(10);
+    width: rem(105);
+    height: rem(30);
+    font-size: rem(12);
+    color: #14b3f2;
+    text-align: center;
+    border: none;
+    outline: none;
+    background: #fff;
+  }
+  .cancelButton{
+    left: rem(19);
+    border-top-left-radius: rem(30);
+    border-bottom-left-radius: rem(30);
+    border-top-right-radius: rem(6);
+    border-bottom-right-radius: rem(6);
+  }
+  
+  .submitButton{
+    right: rem(19);
+    border-top-right-radius: rem(30);
+    border-bottom-right-radius: rem(30);
+    border-top-left-radius: rem(6);
+    border-bottom-left-radius: rem(6);
+  }
+
+  .submitButton2{
+    position: absolute;
+    bottom: rem(10);
+    left:rem(20);
+    width: rem(205);
+    height: rem(30);
+    font-size: rem(12);
+    color: #14b3f2;
+    text-align: center;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: rem(30)
+  }
+}
+
+.testView {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height:100%;
+  left: 0;
+  top: 0;
+  background: url('../res/images/control/dodge_bg.png');
+  background-size:100% 100%;
+  padding: 3rem 0 0 0;
+  color:white;
+  .steeringEngine{
+    float:left;
+  }
+  .switchButton{
+    float:left;
+  }
+  .inputOne{
+    width:1rem;
+  }
+}

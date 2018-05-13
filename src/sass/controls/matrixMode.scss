@@ -1,0 +1,186 @@
+@import '../base' ;
+.matriModeModeView{
+  position:absolute;
+  width:100%;
+  background-color: #171724;
+  top:rem(62);
+  bottom:rem(0);
+
+  .containern{
+    position:absolute;
+    width:rem(480.5);
+    height:rem(200.5);
+    top:40%;
+    transform: translateY(-50%);
+    left:rem(98.5);
+  .matrixcons{
+    position:absolute;
+    left:0;
+    top:0;
+    width:rem(190);
+    height:rem(200);
+  }
+  .matrixI{
+    position:absolute;
+    top:0; 
+    right:0;
+    width:rem(260);
+    height:rem(185);
+  }
+ }
+
+ .matxFoot{
+   position:absolute;
+   bottom: 0;
+   width:100%;
+   height:rem(90);
+   background: url('../../res/images/control/max_foot_bg.png');
+   background-size: 100% 100%;
+
+   .left{
+    width:rem(568);
+    position:absolute;
+    left: rem(6);
+    bottom:rem(5);
+    background-color:rgba(0,0,0,0);
+    height:rem(80);
+    overflow:auto;
+
+    .leftContentor{
+      height:rem(80);
+      width:rem(700);
+      overflow-x: scroll;
+
+      .matrixItem{
+        width:rem(85);
+        height:rem(60);
+        float:left;
+        margin:rem(10) rem(5) rem(0) rem(10);
+
+      .matrixFoot{
+        width:rem(85);
+        height:rem(60); 
+      }
+    }
+    }
+   }
+
+   .right_switch{
+    width:rem(50);
+    height:rem(50);
+    position:absolute;
+    bottom:rem(20);
+    right:rem(22.5);
+    background:url('../../res/images/control/matrix_switch.png');
+    background-size:100% 100%;
+   }
+
+   .right_close{
+     width:rem(50);
+     height:rem(50);
+     position:absolute;
+     bottom:rem(20);
+     right:rem(22.5);
+     background:url('../../res/images/control/matixx-close.svg');
+     background-size:100% 100%;
+   }
+ }
+
+ .matrixDraw{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 60;
+
+  .mask{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.2;
+    background: #000;
+    z-index: 60;
+    display: none;
+  }
+
+  .container{
+   width:100%;
+   height:100%;
+    background: #1c85fe;
+    z-index: 61;
+    
+
+    .boardBox{
+      position: absolute;
+      left: 1px;
+      right: 1px;
+      top: 1px;
+      bottom: 0;
+
+      .board{
+        background: #eee;
+      }
+    }
+
+    .buttonBox{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 30px;
+
+      button{
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.matrixIcon{  
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 60;
+
+  .mask{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.2;
+    background: #000;
+    z-index: 60;
+    display:none;
+  }
+
+  .container{
+    position: relative;
+    bottom:0;
+    top: 0;
+    height:100%;
+    // background-color: #eff3f3;
+    z-index: 61;
+
+    .item{
+      float: left;
+      margin-right: rem(5);
+      width: rem(84);
+      height: rem(67);
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+}
+

@@ -1,0 +1,129 @@
+@import '../base';
+
+.myProjectPage {
+  #blocklyDiv {
+    height: 100%;
+    width: 100%;
+  }
+
+  .blocklyHead {
+    height: rem(65);
+    width: 100%;
+    font-size: 12px;
+    .title{
+      text-align: center;
+      font-size: rem(16);
+      line-height: rem(55);
+      color: #ffffff;
+      width: 60%;
+      margin: 0 0 0 20%;
+      white-space:nowrap;//强制不换行，所有内容一行显示  
+      overflow:hidden;//溢出内容隐藏  
+      text-overflow:ellipsis;//只部分显示一行  
+    }
+  }
+
+  .blocklyHead button {
+  }
+
+  .blocklyBody {
+    top: rem(56);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+  }
+
+  #blocklyCode {
+    bottom: 0;
+    right: 30%;
+    width: 300px;
+    height: 100px;
+    z-index: 10000;
+    position: absolute;
+    display: none;
+  }
+  #toolbox-gs {
+    display: none;
+  }
+
+  .blocklyScrollbarHandle {
+    width: 0px !important;
+  }
+
+  .blocklyFlyout {
+    width: 200px !important;
+  }
+}
+
+.blocklyDropDownDiv{
+  position: absolute;
+  top: 50%!important;
+  margin-top: -140px!important;
+}
+
+.myProjectPage {
+  background: #171937;
+
+  .backButton {
+    position: absolute;
+    z-index: 1001;
+    top: rem(2.5);
+    left: rem(2.5);
+    width: rem(52);
+    height: rem(52);
+
+    .goBack{
+      background: url("../../res/images/svg/icon_goback.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      margin-left: rem(11);
+      margin-top: rem(11);
+      background-size: contain !important;
+    }
+  }
+
+  .connectionButton{
+    position: absolute;
+    z-index: 1001;
+    top: rem(2.5);
+    right: rem(2.5);
+    width: rem(52);
+    height: rem(52);
+
+    .bleConnect{
+      background: url("../../res/images/svg/icon_ble_true.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      background-size: contain !important;
+      margin-top: rem(11);
+      margin-left: rem(11);
+    }
+
+    .bleDisconnect{
+      background: url("../../res/images/svg/icon_ble_false.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      background-size: contain !important;
+      margin-top: rem(11);
+      margin-left: rem(11);
+    }
+  }
+
+  .rssiIcon{
+    position: absolute;
+    z-index: 1001;
+    top: rem(2.5);
+    right: rem(54.5);
+    width: rem(52);
+    height: rem(52);
+    .icon{
+      margin-top: rem(11);
+      margin-left: rem(11);
+      height: rem(30);
+      width: rem(30);
+    }
+  }
+}

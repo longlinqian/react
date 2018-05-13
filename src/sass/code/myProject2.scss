@@ -1,0 +1,222 @@
+@import '../base';
+
+$blockly_bg_workspace:#171937;
+$blockly_bg_toolbox: #2e2f50;
+$blockly_width_toolbox :100px;
+$blockly_width_flyout :250px;
+
+//blockly:
+.myProjectPage2 {
+  #blocklyDiv {
+    height: 100%;
+    width: 100%;
+  }
+
+  .blocklyHead {
+    height: rem(65);
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .blocklyHead button {
+  }
+
+  .blocklyBody {
+    top: rem(56);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+  }
+
+  #toolbox-gs {
+    display: none;
+  }
+  .toolbox{
+    display: none;
+  }
+
+  .blocklyScrollbarHandle {
+    width: 0px !important;
+  }
+
+  .blocklyFlyout {
+    width: ($blockly_width_flyout) !important;
+    margin: 2px 2px;
+    margin-left: ($blockly_width_toolbox + 14px);
+    border-radius: 4px;
+    transform: translate(0px, 0px) !important;
+  }
+
+  .blocklyToolboxDiv {
+    background-color: $blockly_bg_workspace;
+
+    .scratchCategoryMenu {
+      width: ($blockly_width_toolbox) !important;
+      padding: 2px 6px;
+      background: $blockly_bg_toolbox;
+      border-radius: 4px;
+      margin: 2px 2px;
+
+      .scratchCategoryMenuRow:before {
+        display: none !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      .scratchCategoryMenuRow {
+        background: #FFFFFF;
+        border-radius: 10px;
+        margin: rem(5) 2px;
+        overflow: hidden;
+        height: 34px!important;
+        line-height:34px !important;
+
+        .scratchCategoryMenuItem {
+            padding:0.1rem !important;
+            height:4rem !important;
+            line-height:4rem !important;
+          .scratchCategoryItemBubble {
+            width: 20px !important;
+            height: 20px !important;
+            float: left;
+            margin-left: 2px!important;
+            margin-top: .1rem!important;
+          }
+
+          .scratchCategoryMenuItemLabel {
+            font-size: 14px !important;
+            height:20px !important;
+            line-height: 20px  !important;
+            margin-top: 5px!important;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+//for test
+.myProjectPage2 {
+  .demoList{
+    z-index: 10000;
+    position: absolute;
+    display: none;
+    top:20%;
+    left: 20%;
+    text-align: center;
+
+    .item{
+      margin-left: 4px;
+      background-color: #edf2f2;
+      font-size: 12px;
+      width: 120px;height: 50px;
+    }
+  }
+
+  #blocklyCode {
+    bottom: 0;
+    right: 30%;
+    width: 300px;
+    height: 100px;
+    z-index: 10000;
+    position: absolute;
+    display: none;
+  }
+
+  .testBlock{
+    display: none;
+    z-index: 10000;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 40%;
+    height: 20px;
+    button{ margin-left: 5px; background-color: #edf2f2;}
+  }
+}
+
+.blocklyDropDownDiv{
+  position: absolute;
+  top: 50%!important;
+  margin-top: -140px!important;
+}
+
+//page:
+.myProjectPage2 {
+  background-color:($blockly_bg_workspace);
+
+  .backButton {
+    position: absolute;
+    z-index: 1001;
+    top: rem(2.5);
+    left: rem(2.5);
+    width: rem(52);
+    height: rem(52);
+
+    .goBack{
+      background: url("../../res/images/svg/icon_goback.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      margin-left: rem(11);
+      margin-top: rem(11);
+      background-size: contain !important;
+    }
+  }
+
+  .connectionButton{
+    position: absolute;
+    z-index: 1001;
+    top: rem(2.5);
+    right: rem(2.5);
+    width: rem(52);
+    height: rem(52);
+
+    .bleConnect{
+      background: url("../../res/images/svg/icon_ble_true.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      background-size: contain !important;
+      margin-top: rem(11);
+      margin-left: rem(11);
+    }
+
+    .bleDisconnect{
+      background: url("../../res/images/svg/icon_ble_false.svg") no-repeat;
+      width: rem(30);
+      height: rem(30);
+      background-size: contain !important;
+      margin-top: rem(11);
+      margin-left: rem(11);
+    }
+  }
+
+  .title{
+    text-align: center;
+    font-size: rem(16);
+    line-height: rem(55);
+    color: #ffffff;
+    width: 60%;
+    margin: 0 0 0 20%;
+    white-space:nowrap;//强制不换行，所有内容一行显示
+    overflow:hidden;//溢出内容隐藏
+    text-overflow:ellipsis;//只部分显示一行
+  }
+
+  .rssiIcon{
+    position: absolute;
+    z-index: 1001;
+    top: rem(15);
+    right: rem(60);
+    width: rem(30);
+    height: rem(30);
+
+    .icon{
+      height: rem(30);
+      width: rem(30);
+    }
+  }
+}

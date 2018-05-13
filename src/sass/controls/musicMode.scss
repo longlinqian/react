@@ -1,0 +1,107 @@
+@import '../base' ;
+.musicModeView{
+  margin: rem(70) auto 0;
+  width: rem(475);
+  .playlist{
+    height: rem(100);
+    background-color: #282b49;
+    .item{
+      float: left;
+      width: 25%;
+      height: inherit;
+      position: relative;
+    }
+    .name{
+      width: 100%;
+      left: 0;
+      bottom: rem(14);
+      text-align: center;
+      font-size: rem(15);
+      color: #fff;
+      position: absolute;
+    }
+    .icon{
+      margin: rem(25) auto 0;
+      width: rem(35);
+      height: rem(35);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .icon1{
+      background-image: url("../../res/images/svg/song_1.svg");
+    }
+    .icon2{
+      background-image: url("../../res/images/svg/song_2.svg");
+    }
+    .icon3{
+      background-image: url("../../res/images/svg/song_3.svg");
+    }
+    .icon4{
+      background-image: url("../../res/images/svg/song_4.svg");
+    }
+  }
+  .keyboard{
+    margin-top: rem(20);
+    height: rem(200);
+    clear: both;
+    overflow: hidden;
+  }
+  .key{
+    float: left;
+    position: relative;
+  }
+  .keyWhite{
+    margin-right: rem(4);
+    width: rem(64);
+    height: rem(153);
+    text-align: center;
+    vertical-align: bottom;
+    z-index: 1;
+    background-color: #d1d7d7;
+    border-radius: rem(3);
+    &.active{
+      background-image: linear-gradient(to bottom, #d1d7d7, #6c7c8d), linear-gradient(#d1d7d7, #d1d7d7);
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+    .name{
+      position: absolute;
+      bottom: rem(21);
+      left: 0;
+      width: 100%;
+    }
+  }
+  .keyBlack{
+    width: 0;
+    z-index: 2;
+    &:after{
+      content: "";
+      position: absolute;
+      top: rem(-4);
+      left: rem(-21.5);
+      display: block;
+      width: rem(31);
+      height: rem(89.5);
+      border: rem(4) solid #181b35;
+      background: #181b35 url("../../res/images/control/black_key.png") no-repeat;
+      border-radius: rem(3);
+      background-size: cover;
+    }
+    &.active{
+      &:after{
+        content: "";
+        position: absolute;
+        top: rem(-4);
+        left: rem(-21.5);
+        display: block;
+        width: rem(31);
+        height: rem(89.5);
+        border: rem(4) solid #181b35;
+        background: #181b35 url("../../res/images/control/black_key_active.png") no-repeat;
+        border-radius: rem(3);
+        background-size: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,274 @@
+@import '../base' ;
+
+.LineTrackingView {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height:100%;
+  left: 0;
+  top: 0;
+  background: url('../../res/images/control/dodge_bg.png');
+  background-size:100% 100%;
+
+  .maskBlock{
+    width:100%;
+    height: 100%;
+    background: rgba(255,255,255,0);
+    z-index:10000;
+  }
+  
+  .maskNone{
+    display: none;
+  }
+
+  .LineContainer {
+    position: absolute;
+    z-index: -1;
+    top: rem(0);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+
+    .startClass{
+      position:absolute;
+      top:rem(22.5);
+      left: rem(29.5);
+      width:rem(51);
+      height:rem(11.5);
+    }
+
+    .endClass{
+      position:absolute;
+      right:rem(26.5);
+      bottom: rem(15);
+      width:rem(32);
+      height:rem(11);
+    }
+
+    .car{
+      width:rem(31);
+      height:rem(38.5);
+      position: absolute;
+      top:rem(43.5);
+      left:rem(53.5);
+      animation:myfirst 25s infinite;
+      -moz-animation:myfirst 25s infinite; /* Firefox */
+      -webkit-animation:myfirst 25s infinite ; /* Safari and Chrome */
+      -o-animation:myfirst 25s infinite; /* Opera */
+    }
+
+    .carVoice{
+      width:rem(40);
+      height:rem(18.5);
+      position:absolute;
+      top:rem(72);
+      left:rem(33);
+      animation:myfirst1 15s infinite;
+      -moz-animation:myfirst1 10s infinite; /* Firefox */
+      -webkit-animation:myfirst1 10s infinite; /* Safari and Chrome */
+      -o-animation:myfirst1 10s infinite; /* Opera */
+    }
+
+      @keyframes myfirst
+      {
+      0%   {transform: rotate(90deg);top: 1%;left:10%;}
+      5%   {transform: rotate(45deg);top: 20%;left:3.5%;}
+      10%  {transform: rotate(00deg);top: 40%; left:1%; }
+      15%  {transform: rotate(-45deg);top: 62%;left:4.5%;}
+      20%  {transform: rotate(-90deg);top: 76%; left:8%;}
+      22%  {transform: rotate(-90deg);top: 80%; left:10%;}
+      50%  {transform: rotate(-90deg);top: 80%;left:83%;}
+      53%  {transform: rotate(-112.5deg);top: 72%;left:87%;}
+      55%  {transform: rotate(-135deg);top: 60%; left:90.5%;}
+      60%  {transform: rotate(-180deg);top: 40%; left:94%}
+      65%  {transform: rotate(-225deg);top: 20%; left:91%}
+      70%  {transform: rotate(-270deg);top: 1%; left:87%;}
+    
+      100% {transform: rotate(-270deg);top: 1%; left:10%;}
+      }
+
+      @keyframes myfirst1
+      {
+      0%   {transform: rotate(0deg);top: 10%;left:rem(33.5);}
+      20%  {transform: rotate(0deg);top: 85%; left:rem(33.5); }
+      25%  {transform: rotate(-118deg);top: 85%; left:rem(33.5);}
+      40%  {transform: rotate(-118deg);top: 31%;left:42%;}
+      45%  {transform: rotate(-45deg);top: 31%; left:42%;}
+      60%  {transform: rotate(-45deg);top: 80%; left:60%}
+      65%  {transform: rotate(-135deg);top: 80%; left:60%;}
+      80%  {transform: rotate(-135deg);top: 20%; left:rem(602);}
+      85%  {transform: rotate(0deg);top: 20%; left:rem(602);}
+      100% {transform: rotate(0deg);top: 75%; left:rem(602);}
+      }
+
+     .out-container{
+      width:rem(625);
+      height:rem(210);
+      position:absolute;
+      top:50%;
+      left:50%;
+      background: url('../../res/images/lineTracking/LineTracking_2.png');
+      background-size:100% 100%; 
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);		/* IE 9 */
+      -webkit-transform: translate(-50%,-40%);	/* Safari and Chrome */
+      -o-transform: translate(-50%,-50%);		/* Opera */
+      -moz-transform: translate(-50%,-50%);		/* Firefox */
+     }
+     .inputOne{
+       position: relative;
+       margin:15% 0 0 10%;
+     }
+     .inputTwo{
+      position: relative;
+      margin:15% 0 0 20%;
+    }
+    .inputThree{
+      position: relative;
+      margin:20% 0 0 20%;
+    }
+
+    .urlone{
+      width:rem(625);
+      height:rem(210);
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);		/* IE 9 */
+      -webkit-transform: translate(-50%,-40%);	/* Safari and Chrome */
+      -o-transform: translate(-50%,-50%);		/* Opera */
+      -moz-transform: translate(-50%,-50%);		/* Firefox */
+    }
+
+    .urltwo{
+      width:rem(575);
+      height:rem(167);
+      position:absolute;
+      top:rem(20);
+      left:rem(24);
+      
+    }
+
+    .urlthree{
+      width:rem(165);
+      height:rem(165);
+      position:absolute;
+      top:rem(-20);
+      left:rem(312.5);
+      clip:rect(rem(20) rem(165) rem(165) rem(0)); 
+    }
+
+    .urlfour{
+      width:rem(26);
+      height:40%;
+      position:absolute;
+      bottom:rem(0);
+      left:rem(557);
+    }
+
+    .outBorder{
+      position: absolute;
+      left:rem(28);
+      top:14%;
+      width:rem(620);
+      height:rem(80);
+      background-color:rgba(255,255,255,0);
+      border-radius:rem(30) rem(30) rem(30) rem(30);
+      background-size: 100% 100%;
+
+      .switchButtonOut{
+        position:absolute;
+        top:rem(11);
+        right:rem(15);
+        width:rem(63);
+        height:rem(30);
+        border:rem(2) solid #1d9cff;
+        border-radius: rem(17);
+      }
+      .steeringEngine{
+        position:absolute;
+        top:rem(11);
+        left:rem(15);
+        width:rem(63);
+        height:rem(30);
+        border:rem(2) solid #1d9cff;
+        border-radius: rem(17);
+       }
+
+        .switchButton{
+          position:absolute;
+          top:rem(3.8);
+          right:rem(4);
+          width:rem(55);
+          height:rem(23);
+          background:#0e2e6e;
+          background-size: 100% 100%;
+          border-radius: rem(15);
+
+          .textOn, .textOff{
+            position: absolute;
+            top:0;
+            width:rem(23);
+            height:rem(23);
+            line-height:rem(23);
+            text-align: center;
+            font-size:rem(12);
+            color:#232747;
+            border-radius: rem(11.5);
+          }
+          .textOn{
+            left:0;
+          }
+          .textOff{
+            right:0;
+          }
+          .switchOn, .switchOff{
+            position:absolute;
+            top:rem(0);
+            width:rem(23);
+            height:rem(23);
+            background-size:100% 100%;
+            border-radius: rem(11.5);
+          }
+          .switchOn{
+            left:rem(0);
+            background:#3c8df7;
+          }
+          
+         .switchOff{
+            right:rem(0);
+            background:#0d3993;
+          }
+       }
+
+        .robotPrevious{
+          position:absolute;
+          left:rem(55);
+          top:rem(145);
+          background-size:100% 100%;
+        }
+
+        .voice{
+          position:absolute;
+          right:rem(143);
+          top:rem(113);
+          background-size:100% 100%;
+        }
+
+        .robotSprinting{
+        position:absolute;
+        background-size:100% 100%;
+      }
+
+      .path{
+        position:absolute;
+        left:rem(342);
+        top:rem(277);
+        background-size:100% 100%;
+      }
+    }
+  }
+}

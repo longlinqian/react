@@ -1,0 +1,76 @@
+
+下载:地址 http://112.74.186.204/robobloq/_git/Robobloq/
+切换到develop分支
+npm install  
+ ./build.sh update android //更新app
+ cordova:// 移动端app打包框架
+ cordova platform add android/ios   添加android/ios 平台
+ src: webpack  //整合代码，
+
+
+
+打包说明：
+编辑代码后，先整合代码
+./build.sh update android 中包含整合代码 见build.sh
+重新生成 平台 cordova platform rm ios/android
+cordova platform add ios/android
+#IOS发布时： 
+打开xcode
+xcode：将bundle Identifier : com.robobloq.appstore
+ID名：com.robobloq.appstore
+version:见update.md
+signing Team:RoboBloq Co.,Ltd
+Device Orientation:Landscape Right
+
+
+1.在.plist文件中添加以下配置
+<key>UIStatusBarHidden</key>
+<true/>
+<key>UIViewControllerBasedStatusBarAppearance</key>
+<false/>
+<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>App需要您的同意,才能访问蓝牙</string>
+	<key>NSLocationUsageDescription</key>
+	<string>App需要您的同意,才能访问位置</string>
+
+2.替换图片
+  将cordova下的iconIOSres的内容替换platforms/ios/Robobloq/image.xcassets中的AppIcon,LaunchImage
+
+3.iOS 禁止自动休眠
+Robobloq/Classes/AppDelegate.m : 
+第35行：    self.viewController = [[MainViewController alloc] init];
+ 后加上下面的：
+         [UIApplication sharedApplication].idleTimerDisabled=YES;
+
+登录https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa/ra/ng/app/1294534563
+丰富内容发布
+
+#Android:发布时
+打开androidstudio
+1.打包说明：release/0.4.1  
+            在android/manifests/androidmanifest.xml  
+            android:android:versionCode="1712290" android:versionName="1.5.2",
+            包名：com.robobloq.az
+            android打包加版本号后需要处理下build.gradle的186行
+            替换为versionCode defaultConfig.versionCode
+         
+2.adnroid:签名：
+
+signingConfigs {
+            release {
+                storeFile file("/Users/long.lin/Desktop/robobloq.keystore")
+                storePassword "Mokuai520"
+                keyAlias "robobloq"
+                keyPassword "Mokuai520"
+            }
+        }
+3.禁止自动休眠
+a. /AndroidManifest.xml
+第4行后加上：<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+b.src/com/robobloq/az/MainActivity 
+24 行加 import android.view.WindowManager;
+32 行加 getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+
+在androidstudio的右侧导航栏中  生成assembleRelease包
